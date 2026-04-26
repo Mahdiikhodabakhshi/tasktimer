@@ -6,6 +6,14 @@
   "publisher": "makh",
   "license": "MIT",
   "icon": "resources/tasktimer.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mahdiikhodabakhshi/tasktimer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mahdiikhodabakhshi/tasktimer/issues"
+  },
+  "homepage": "https://github.com/Mahdiikhodabakhshi/tasktimer#readme",
   "engines": {
     "vscode": "^1.90.0"
   },
