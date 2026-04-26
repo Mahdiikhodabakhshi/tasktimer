@@ -1,6 +1,6 @@
 {
-  "name": "tasktimer",
-  "displayName": "Task Timer",
+  "name": "story-task-timer",
+  "displayName": "Story Task Timer",
   "description": "Track User Story task estimates and actual time inside a VS Code workspace.",
   "version": "0.1.1",
   "publisher": "makh",
