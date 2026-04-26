@@ -1,45 +1,45 @@
 # Task Timer
 
-Task Timer is a Visual Studio Code extension for tracking the real time spent on User Story tasks directly inside your workspace.
+Track User Story task estimates and actual time directly inside Visual Studio Code.
 
-It is built for developers who estimate work before starting, but later need a clear answer to: “How much time did this User Story actually take?”
+Task Timer is a workspace-local time tracking extension for developers who want to compare estimated work with the time actually spent implementing tasks.
 
-## Features
+![Task Timer dashboard](docs/images/tasktimer-dashboard.png)
+
+## Highlights
 
 - Create User Stories with an optional external ID.
-- Add tasks under each User Story.
-- Set task estimates using values like `30m`, `1h`, `1h 30m`, or `2.5h`.
-- Start, pause, resume, finish, and reopen tasks.
-- Run multiple active task timers at the same time.
-- Edit User Story title, ID, and description.
-- Edit task title and estimate.
-- Manually edit actual tracked time.
+- Add tasks with estimates like `30m`, `1h`, `1h 30m`, or `2.5h`.
+- Start, pause, resume, finish, and reopen task timers.
+- Track multiple active tasks at the same time.
+- Edit User Stories, tasks, estimates, and actual time.
+- Collapse and expand User Stories in the dashboard.
 - Delete User Stories or tasks with confirmation.
-- See active timers in the VS Code status bar.
-- Use a quick action menu for daily workflow.
-- Copy User Story reports as Markdown.
-- Copy daily work logs as Markdown.
-- Store data locally in the current workspace.
+- Copy User Story and daily reports as Markdown.
+- Switch UI text between English and Spanish.
+- Store all data locally in the current workspace.
 
-## Why Use It?
+## Why Task Timer?
 
-Many teams estimate tasks before implementation, but actual work often gets split across interruptions, debugging sessions, meetings, and context switches.
+Estimates are useful only if you can compare them with real work.
 
-Task Timer keeps the tracking close to where the work happens: your editor.
-
-Example:
+Task Timer helps answer questions like:
 
 ```text
-User Story: Login flow
-
-Tasks:
-- Create API: estimated 2h, actual 2h 40m
-- Create UI: estimated 1h, actual 1h 20m
-
-Total estimated: 3h
-Total actual: 4h
-Difference: +1h
+How long did this User Story actually take?
+Which task was underestimated?
+What did I work on today?
 ```
+
+It keeps the workflow inside VS Code, so you do not need a separate timer app while coding.
+
+## First Use
+
+When no User Stories exist yet, Task Timer shows a focused empty state.
+
+![Task Timer empty state](docs/images/tasktimer-empty-state.png)
+
+Start with **Create User Story**, then add tasks and estimates.
 
 ## Daily Workflow
 
@@ -51,11 +51,25 @@ Difference: +1h
 6. Finish it when done.
 7. Copy a daily report or User Story report when needed.
 
-You can also click the **Task Timer** status bar item to open the quick action menu.
+You can also use the status bar or command palette for quick actions.
+
+## Dashboard
+
+The dashboard shows your active work at a glance:
+
+- Active timer count
+- Total estimated time
+- Total actual time
+- User Story progress
+- Task status
+- Actual vs estimated time per task
+- Inline actions for start, pause, finish, edit, delete, and reports
+
+![Task Timer active story](docs/images/tasktimer-active-story.png)
 
 ## User Stories
 
-Each User Story can have:
+Each User Story can include:
 
 - Title
 - Optional ID
@@ -78,7 +92,7 @@ US-2024-15
 
 ## Tasks
 
-Each task can have:
+Each task can include:
 
 - Title
 - Estimate
@@ -144,6 +158,21 @@ Includes:
 - Start and end times
 - Total tracked task time
 
+## Language
+
+Task Timer supports:
+
+- English
+- Spanish
+
+Use **Task Timer: Change Language** from the command palette, or update the setting:
+
+```json
+{
+  "tasktimer.language": "es"
+}
+```
+
 ## Storage
 
 Task Timer stores data inside the current workspace:
@@ -160,13 +189,19 @@ By default, the generated `.gitignore` ignores this folder:
 .tasktimer/
 ```
 
-If your team wants to share time tracking data, you can remove that ignore rule. For personal tracking, keeping it ignored is recommended.
+If your team wants to share time tracking data, remove that ignore rule. For personal tracking, keeping it ignored is recommended.
 
 ## Privacy
 
 Task Timer does not send your data anywhere.
 
 All User Stories, tasks, estimates, sessions, and reports are stored locally in your workspace.
+
+## Support
+
+If Task Timer is useful for you, you can support its development here:
+
+[Donate with PayPal](https://paypal.me/mahdikhodabakhshi)
 
 ## Commands
 
@@ -186,11 +221,10 @@ Task Timer: Reopen Task
 Task Timer: Edit Actual Time
 Task Timer: Copy User Story Report
 Task Timer: Copy Daily Report
+Task Timer: Change Language
 Task Timer: Quick Action
 Task Timer: Refresh
 ```
-
-Most commands are also available from the Task Timer sidebar context menu.
 
 ## Estimate Format
 
@@ -206,46 +240,6 @@ Supported estimate and actual-time formats:
 
 Plain numbers are treated as minutes.
 
-## Current Limitations
-
-- No automatic integration with Jira, Azure DevOps, GitHub Issues, or other trackers yet.
-- No cloud sync.
-- No idle detection yet.
-- No calendar view yet.
-- No chart or analytics dashboard yet.
-
-## Roadmap
-
-Planned or possible future improvements:
-
-- Idle time detection.
-- Better report views inside VS Code.
-- Weekly and monthly summaries.
-- CSV export.
-- Import/export commands.
-- Optional integrations with issue trackers.
-- Configurable storage location.
-- Team-friendly shared reports.
-
-## Development
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Compile:
-
-```bash
-npm run compile
-```
-
-Run locally:
-
-1. Open this extension folder in VS Code.
-2. Press `F5`.
-3. Use the Extension Development Host window.
 
 ## License
 

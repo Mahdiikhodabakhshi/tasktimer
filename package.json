@@ -27,6 +27,7 @@
     "onCommand:tasktimer.editTaskTime",
     "onCommand:tasktimer.copyUserStoryReport",
     "onCommand:tasktimer.copyDailyReport",
+    "onCommand:tasktimer.setLanguage",
     "onCommand:tasktimer.quickAction",
     "onCommand:tasktimer.refresh"
   ],
@@ -45,7 +46,8 @@
       "tasktimer": [
         {
           "id": "tasktimer.stories",
-          "name": "Stories"
+          "name": "Stories",
+          "type": "webview"
         }
       ]
     },
@@ -135,16 +137,16 @@
         "icon": "$(list-selection)"
       },
       {
+        "command": "tasktimer.setLanguage",
+        "title": "Change Language",
+        "category": "Task Timer",
+        "icon": "$(globe)"
+      },
+      {
         "command": "tasktimer.refresh",
         "title": "Refresh",
         "category": "Task Timer",
         "icon": "$(refresh)"
-      }
-    ],
-    "viewsWelcome": [
-      {
-        "view": "tasktimer.stories",
-        "contents": "Track story tasks against estimates in this workspace.\n\n[Create User Story](command:tasktimer.createUserStory)\n[Quick Action](command:tasktimer.quickAction)\n[Copy Daily Report](command:tasktimer.copyDailyReport)"
       }
     ],
     "menus": {
@@ -165,9 +167,14 @@
           "group": "navigation@3"
         },
         {
-          "command": "tasktimer.refresh",
+          "command": "tasktimer.setLanguage",
           "when": "view == tasktimer.stories",
           "group": "navigation@4"
+        },
+        {
+          "command": "tasktimer.refresh",
+          "when": "view == tasktimer.stories",
+          "group": "navigation@5"
         }
       ],
       "view/item/context": [
@@ -251,8 +258,29 @@
         },
         {
           "command": "tasktimer.quickAction"
+        },
+        {
+          "command": "tasktimer.setLanguage"
         }
       ]
+    },
+    "configuration": {
+      "title": "Task Timer",
+      "properties": {
+        "tasktimer.language": {
+          "type": "string",
+          "default": "en",
+          "enum": [
+            "en",
+            "es"
+          ],
+          "enumItemLabels": [
+            "English",
+            "Español"
+          ],
+          "description": "Language used by Task Timer UI text."
+        }
+      }
     }
   },
   "scripts": {

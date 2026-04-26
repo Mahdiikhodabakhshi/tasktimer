@@ -16,6 +16,7 @@ All notable changes to Task Timer will be documented in this file.
 - Store workspace-local data in `.tasktimer/tasktimer.json`.
 - Show active timer state in the VS Code status bar.
 - Add quick action menu for daily workflow.
-- Add Task Timer activity bar view.
+- Add custom Task Timer dashboard in the activity bar.
+- Add English and Spanish UI language setting.
 - Copy daily work logs as Markdown.
 - Copy User Story reports as Markdown.
