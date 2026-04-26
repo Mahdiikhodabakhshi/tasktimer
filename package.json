@@ -1,0 +1,268 @@
+{
+  "name": "tasktimer",
+  "displayName": "Task Timer",
+  "description": "Track User Story task estimates and actual time inside a VS Code workspace.",
+  "version": "0.1.0",
+  "publisher": "makh",
+  "license": "MIT",
+  "icon": "resources/tasktimer.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:tasktimer.stories",
+    "onCommand:tasktimer.createUserStory",
+    "onCommand:tasktimer.editUserStory",
+    "onCommand:tasktimer.deleteUserStory",
+    "onCommand:tasktimer.addTask",
+    "onCommand:tasktimer.editTask",
+    "onCommand:tasktimer.deleteTask",
+    "onCommand:tasktimer.startTask",
+    "onCommand:tasktimer.pauseTask",
+    "onCommand:tasktimer.finishTask",
+    "onCommand:tasktimer.reopenTask",
+    "onCommand:tasktimer.editTaskTime",
+    "onCommand:tasktimer.copyUserStoryReport",
+    "onCommand:tasktimer.copyDailyReport",
+    "onCommand:tasktimer.quickAction",
+    "onCommand:tasktimer.refresh"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "tasktimer",
+          "title": "Task Timer",
+          "icon": "resources/tasktimer.png"
+        }
+      ]
+    },
+    "views": {
+      "tasktimer": [
+        {
+          "id": "tasktimer.stories",
+          "name": "Stories"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "tasktimer.createUserStory",
+        "title": "Create User Story",
+        "category": "Task Timer",
+        "icon": "$(add)"
+      },
+      {
+        "command": "tasktimer.addTask",
+        "title": "Add Task",
+        "category": "Task Timer",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "tasktimer.editUserStory",
+        "title": "Edit User Story",
+        "category": "Task Timer",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "tasktimer.deleteUserStory",
+        "title": "Delete User Story",
+        "category": "Task Timer",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "tasktimer.editTask",
+        "title": "Edit Task",
+        "category": "Task Timer",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "tasktimer.deleteTask",
+        "title": "Delete Task",
+        "category": "Task Timer",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "tasktimer.startTask",
+        "title": "Start Task",
+        "category": "Task Timer",
+        "icon": "$(play)"
+      },
+      {
+        "command": "tasktimer.pauseTask",
+        "title": "Pause Task",
+        "category": "Task Timer",
+        "icon": "$(debug-pause)"
+      },
+      {
+        "command": "tasktimer.finishTask",
+        "title": "Finish Task",
+        "category": "Task Timer",
+        "icon": "$(pass)"
+      },
+      {
+        "command": "tasktimer.reopenTask",
+        "title": "Reopen Task",
+        "category": "Task Timer",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "tasktimer.editTaskTime",
+        "title": "Edit Actual Time",
+        "category": "Task Timer",
+        "icon": "$(watch)"
+      },
+      {
+        "command": "tasktimer.copyUserStoryReport",
+        "title": "Copy User Story Report",
+        "category": "Task Timer",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "tasktimer.copyDailyReport",
+        "title": "Copy Daily Report",
+        "category": "Task Timer",
+        "icon": "$(calendar)"
+      },
+      {
+        "command": "tasktimer.quickAction",
+        "title": "Quick Action",
+        "category": "Task Timer",
+        "icon": "$(list-selection)"
+      },
+      {
+        "command": "tasktimer.refresh",
+        "title": "Refresh",
+        "category": "Task Timer",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsWelcome": [
+      {
+        "view": "tasktimer.stories",
+        "contents": "Track story tasks against estimates in this workspace.\n\n[Create User Story](command:tasktimer.createUserStory)\n[Quick Action](command:tasktimer.quickAction)\n[Copy Daily Report](command:tasktimer.copyDailyReport)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "tasktimer.createUserStory",
+          "when": "view == tasktimer.stories",
+          "group": "navigation@1"
+        },
+        {
+          "command": "tasktimer.copyDailyReport",
+          "when": "view == tasktimer.stories",
+          "group": "navigation@2"
+        },
+        {
+          "command": "tasktimer.quickAction",
+          "when": "view == tasktimer.stories",
+          "group": "navigation@3"
+        },
+        {
+          "command": "tasktimer.refresh",
+          "when": "view == tasktimer.stories",
+          "group": "navigation@4"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "tasktimer.addTask",
+          "when": "view == tasktimer.stories && viewItem == userStory",
+          "group": "inline@1"
+        },
+        {
+          "command": "tasktimer.editUserStory",
+          "when": "view == tasktimer.stories && viewItem == userStory",
+          "group": "inline@2"
+        },
+        {
+          "command": "tasktimer.copyUserStoryReport",
+          "when": "view == tasktimer.stories && viewItem == userStory",
+          "group": "inline@3"
+        },
+        {
+          "command": "tasktimer.deleteUserStory",
+          "when": "view == tasktimer.stories && viewItem == userStory",
+          "group": "inline@4"
+        },
+        {
+          "command": "tasktimer.startTask",
+          "when": "view == tasktimer.stories && (viewItem == taskTodo || viewItem == taskPaused)",
+          "group": "inline@1"
+        },
+        {
+          "command": "tasktimer.pauseTask",
+          "when": "view == tasktimer.stories && viewItem == taskActive",
+          "group": "inline@1"
+        },
+        {
+          "command": "tasktimer.finishTask",
+          "when": "view == tasktimer.stories && (viewItem == taskTodo || viewItem == taskActive || viewItem == taskPaused)",
+          "group": "inline@2"
+        },
+        {
+          "command": "tasktimer.reopenTask",
+          "when": "view == tasktimer.stories && viewItem == taskFinished",
+          "group": "inline@2"
+        },
+        {
+          "command": "tasktimer.editTask",
+          "when": "view == tasktimer.stories && viewItem =~ /task/",
+          "group": "inline@3"
+        },
+        {
+          "command": "tasktimer.editTaskTime",
+          "when": "view == tasktimer.stories && viewItem =~ /task/",
+          "group": "inline@4"
+        },
+        {
+          "command": "tasktimer.deleteTask",
+          "when": "view == tasktimer.stories && viewItem =~ /task/",
+          "group": "inline@5"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "tasktimer.createUserStory"
+        },
+        {
+          "command": "tasktimer.addTask"
+        },
+        {
+          "command": "tasktimer.editUserStory"
+        },
+        {
+          "command": "tasktimer.deleteUserStory"
+        },
+        {
+          "command": "tasktimer.editTask"
+        },
+        {
+          "command": "tasktimer.deleteTask"
+        },
+        {
+          "command": "tasktimer.copyDailyReport"
+        },
+        {
+          "command": "tasktimer.quickAction"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.2"
+  }
+}
