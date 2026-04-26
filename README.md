@@ -197,12 +197,6 @@ Task Timer does not send your data anywhere.
 
 All User Stories, tasks, estimates, sessions, and reports are stored locally in your workspace.
 
-## Support
-
-If Task Timer is useful for you, you can support its development here:
-
-[Donate with PayPal](https://paypal.me/mahdikhodabakhshi)
-
 ## Commands
 
 Available commands:
@@ -240,6 +234,24 @@ Supported estimate and actual-time formats:
 
 Plain numbers are treated as minutes.
 
+## Known Issues
+
+Please check the [GitHub Issues page](https://github.com/Mahdiikhodabakhshi/tasktimer/issues) for known issues and to report new ones.
+
+## Support
+
+- Issues: [Report bugs or request features](https://github.com/Mahdiikhodabakhshi/tasktimer/issues)
+- Feedback: [Rate and review on VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=makh.story-task-timer)
+- Donate: [Support development with PayPal](https://paypal.me/mahdikhodabakhshi)
+- GitHub: [Star this project if you find it helpful](https://github.com/Mahdiikhodabakhshi/tasktimer)
+
+Found a bug or have a feature request? [Open an issue](https://github.com/Mahdiikhodabakhshi/tasktimer/issues).
+
+Ready to track User Story estimates and actual time inside VS Code? [Install Story Task Timer](https://marketplace.visualstudio.com/items?itemName=makh.story-task-timer).
+
+Made with ❤️ care by Mahdi Khodabakhshi.
+
+Story Task Timer - where estimation meets actual work.
 
 ## License
 

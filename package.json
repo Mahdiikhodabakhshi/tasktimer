@@ -18,6 +18,8 @@
     "vscode": "^1.90.0"
   },
   "categories": [
+    "Snippets",
+    "Notebooks",
     "Other"
   ],
   "activationEvents": [
