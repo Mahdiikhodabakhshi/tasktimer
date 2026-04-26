@@ -4,7 +4,7 @@ Track User Story task estimates and actual time directly inside Visual Studio Co
 
 Task Timer is a workspace-local time tracking extension for developers who want to compare estimated work with the time actually spent implementing tasks.
 
-![Task Timer dashboard](docs/images/tasktimer-dashboard.png)
+![Task Timer dashboard](https://raw.githubusercontent.com/Mahdiikhodabakhshi/tasktimer/main/docs/images/tasktimer-dashboard.png)
 
 ## Highlights
 
@@ -37,7 +37,7 @@ It keeps the workflow inside VS Code, so you do not need a separate timer app wh
 
 When no User Stories exist yet, Task Timer shows a focused empty state.
 
-![Task Timer empty state](docs/images/tasktimer-empty-state.png)
+![Task Timer empty state](https://raw.githubusercontent.com/Mahdiikhodabakhshi/tasktimer/main/docs/images/tasktimer-empty-state.png)
 
 Start with **Create User Story**, then add tasks and estimates.
 
@@ -65,7 +65,7 @@ The dashboard shows your active work at a glance:
 - Actual vs estimated time per task
 - Inline actions for start, pause, finish, edit, delete, and reports
 
-![Task Timer active story](docs/images/tasktimer-active-story.png)
+![Task Timer active story](https://raw.githubusercontent.com/Mahdiikhodabakhshi/tasktimer/main/docs/images/tasktimer-active-story.png)
 
 ## User Stories
 
