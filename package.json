@@ -2,7 +2,7 @@
   "name": "tasktimer",
   "displayName": "Task Timer",
   "description": "Track User Story task estimates and actual time inside a VS Code workspace.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "makh",
   "license": "MIT",
   "icon": "resources/tasktimer.png",
